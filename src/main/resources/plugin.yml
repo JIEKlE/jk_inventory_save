@@ -1,0 +1,12 @@
+name: jk_inventory_save
+version: '${project.version}'
+main: jiekie.InventorySavePlugin
+api-version: '1.20'
+authors: [Jiekie]
+description: 인벤 세이브 플러그인
+commands:
+  인벤세이브권:
+    description: 인벤세이브권 명령어
+    usage: /인벤세이브권
+    permission: jk.inventory_save.command
+    permission-message: ''
