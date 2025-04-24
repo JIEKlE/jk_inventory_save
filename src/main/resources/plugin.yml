@@ -8,5 +8,6 @@ commands:
   인벤세이브권:
     description: 인벤세이브권 명령어
     usage: /인벤세이브권
+    tab-completer: jiekie.completer.InventorySaveTabCompleter
     permission: jk.inventory_save.command
     permission-message: ''

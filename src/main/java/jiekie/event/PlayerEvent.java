@@ -2,6 +2,7 @@ package jiekie.event;
 
 import jiekie.InventorySavePlugin;
 import jiekie.util.ChatUtil;
+import jiekie.util.InventorySaveManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -21,17 +22,17 @@ public class PlayerEvent implements Listener {
 
     @EventHandler
     public void onDeath(PlayerDeathEvent e) {
+        InventorySaveManager inventorySaveManager = plugin.getInventorySaveManager();
+        ItemStack inventorySaveItem = inventorySaveManager.getInventorySaveItem();
+        if(inventorySaveItem == null) return;
+
         Player player = e.getEntity();
         PlayerInventory inventory = player.getInventory();
         ItemStack[] items = inventory.getContents();
 
         for(int i = 0 ; i < items.length ; i++) {
             ItemStack item = items[i];
-            if(item == null || item.getType() != Material.PAPER) continue;
-
-            ItemMeta meta = item.getItemMeta();
-            if(meta == null || !meta.hasDisplayName() || meta.getCustomModelData() != 151) continue;
-            if(!meta.getDisplayName().equals(ChatColor.DARK_PURPLE + "인벤 세이브권")) continue;
+            if(!inventorySaveManager.compareItem(item)) continue;
 
             e.setKeepInventory(true);
             e.getDrops().clear();
