@@ -14,10 +14,15 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Base64;
+import java.util.List;
 
 public class InventorySaveManager {
     private final InventorySavePlugin plugin;
     private ItemStack inventorySaveItem;
+    private final List<String> inventorySaveItemLore = List.of(
+            " "
+            , ChatColor.DARK_GRAY + "사망 시 해당 아이템을 소지하고 있을 경우 인벤토리가 보호됩니다."
+    );
 
     public InventorySaveManager(InventorySavePlugin plugin) {
         this.plugin = plugin;
@@ -38,8 +43,10 @@ public class InventorySaveManager {
     }
 
     public void registerInventorySaveItem(ItemStack inventorySaveItem) {
+        inventorySaveItem = inventorySaveItem.clone();
         ItemMeta meta = inventorySaveItem.getItemMeta();
         meta.setDisplayName(ChatColor.DARK_PURPLE + "인벤 세이브권");
+        meta.setLore(inventorySaveItemLore);
         meta.addEnchant(Enchantment.LUCK, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 
@@ -59,11 +66,14 @@ public class InventorySaveManager {
         ItemMeta meta = item.getItemMeta();
         if(meta == null || !meta.hasDisplayName()) return false;
 
-        // compare item name
+        // display name
         ItemMeta inventorySaveItemMeta = inventorySaveItem.getItemMeta();
         if(!meta.getDisplayName().equals(inventorySaveItemMeta.getDisplayName())) return false;
 
-        // compare item custom model data
+        // lore
+        if(meta.getLore() == null || !meta.getLore().equals(inventorySaveItemLore)) return false;
+
+        // custom model data
         if(meta.hasCustomModelData() != inventorySaveItemMeta.hasCustomModelData()) return false;
         if(inventorySaveItemMeta.hasCustomModelData()) {
             if(!meta.hasCustomModelData() || meta.getCustomModelData() != inventorySaveItemMeta.getCustomModelData()) return false;
