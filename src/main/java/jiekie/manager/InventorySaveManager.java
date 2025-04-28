@@ -1,4 +1,4 @@
-package jiekie.util;
+package jiekie.manager;
 
 import jiekie.InventorySavePlugin;
 import org.bukkit.ChatColor;

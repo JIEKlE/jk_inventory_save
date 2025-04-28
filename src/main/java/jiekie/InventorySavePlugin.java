@@ -3,7 +3,7 @@ package jiekie;
 import jiekie.command.InventorySaveCommand;
 import jiekie.completer.InventorySaveTabCompleter;
 import jiekie.event.PlayerEvent;
-import jiekie.util.InventorySaveManager;
+import jiekie.manager.InventorySaveManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class InventorySavePlugin extends JavaPlugin {

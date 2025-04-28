@@ -2,16 +2,13 @@ package jiekie.event;
 
 import jiekie.InventorySavePlugin;
 import jiekie.util.ChatUtil;
-import jiekie.util.InventorySaveManager;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
+import jiekie.manager.InventorySaveManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.inventory.meta.ItemMeta;
 
 public class PlayerEvent implements Listener {
     private final InventorySavePlugin plugin;
