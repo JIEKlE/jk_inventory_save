@@ -33,7 +33,7 @@ public class PlayerEvent implements Listener {
 
             e.setKeepInventory(true);
             e.getDrops().clear();
-            ChatUtil.inventorySaved(player);
+            ChatUtil.showMessage(player, ChatUtil.INVENTORY_SAVED);
 
             if(item.getAmount() > 1) item.setAmount(item.getAmount() - 1);
             else items[i] = null;

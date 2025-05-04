@@ -76,7 +76,7 @@ public class InventorySaveManager {
         // custom model data
         if(meta.hasCustomModelData() != inventorySaveItemMeta.hasCustomModelData()) return false;
         if(inventorySaveItemMeta.hasCustomModelData()) {
-            if(!meta.hasCustomModelData() || meta.getCustomModelData() != inventorySaveItemMeta.getCustomModelData()) return false;
+            return meta.hasCustomModelData() && meta.getCustomModelData() == inventorySaveItemMeta.getCustomModelData();
         }
 
         return true;
