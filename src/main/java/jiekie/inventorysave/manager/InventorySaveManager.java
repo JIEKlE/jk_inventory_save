@@ -1,6 +1,6 @@
-package jiekie.manager;
+package jiekie.inventorysave.manager;
 
-import jiekie.InventorySavePlugin;
+import jiekie.inventorysave.InventorySavePlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;

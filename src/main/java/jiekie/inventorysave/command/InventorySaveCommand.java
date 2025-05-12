@@ -1,8 +1,8 @@
-package jiekie.command;
+package jiekie.inventorysave.command;
 
-import jiekie.InventorySavePlugin;
-import jiekie.util.ChatUtil;
-import jiekie.util.SoundUtil;
+import jiekie.inventorysave.InventorySavePlugin;
+import jiekie.inventorysave.util.ChatUtil;
+import jiekie.inventorysave.util.SoundUtil;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

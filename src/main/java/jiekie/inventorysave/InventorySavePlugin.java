@@ -1,9 +1,9 @@
-package jiekie;
+package jiekie.inventorysave;
 
-import jiekie.command.InventorySaveCommand;
-import jiekie.completer.InventorySaveTabCompleter;
-import jiekie.event.PlayerEvent;
-import jiekie.manager.InventorySaveManager;
+import jiekie.inventorysave.command.InventorySaveCommand;
+import jiekie.inventorysave.completer.InventorySaveTabCompleter;
+import jiekie.inventorysave.event.PlayerEvent;
+import jiekie.inventorysave.manager.InventorySaveManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class InventorySavePlugin extends JavaPlugin {

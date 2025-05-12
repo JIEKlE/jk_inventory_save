@@ -1,8 +1,8 @@
-package jiekie.event;
+package jiekie.inventorysave.event;
 
-import jiekie.InventorySavePlugin;
-import jiekie.util.ChatUtil;
-import jiekie.manager.InventorySaveManager;
+import jiekie.inventorysave.InventorySavePlugin;
+import jiekie.inventorysave.util.ChatUtil;
+import jiekie.inventorysave.manager.InventorySaveManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

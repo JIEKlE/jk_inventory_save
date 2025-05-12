@@ -1,4 +1,4 @@
-package jiekie.util;
+package jiekie.inventorysave.util;
 
 import org.bukkit.SoundCategory;
 import org.bukkit.entity.Player;
